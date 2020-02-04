@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+    <html> 
+    <head>
+       <title>o</title> 
+     </head>
+    
+     <body>
+     
+        please input unencoded phrase:  <input id="uncoded" type="text"><br>
+        please put code word: <input id='coder word' type="text" name="lname"><br>
+     <input type="button" onclick="code()" value="submit">
+
+     
+     
+     
+    	<script>
+var code = function(){
+    var uncoded = document.getElementById("uncoded").value;
+    var coderword = document.getElementById("coder word").value;
+
+//first lists
+    var uncodedlist = uncoded.split('');// unencrypted word list
+    var wordlistcd = coderword.split(''); //list of coding numbers
+
+// corresponding number converters
+// message
+    var x = 0;
+    var messagenumlist = []; // coresponding numbers of the message
+    while(x < uncodedlist.length){
+    messagenumlist.push.charCodeAt(uncodedlist[x]);// makes words into numbers
+    x += 1;
+ }
+
+//coding word to numbers 
+var xcd = 0;
+var wordlistcd2 = []; //coresponding numbers
+while (xcd < wordlistcd.length){
+wordlistcd2.push.charCodeAt(wordlistcd[xcd]);// makes words into numbers
+    xcd += 1;
+}
+var CodingNumberListLengthened = []; //code number list lengthed
+while (CodingNumberListLengthened.length < messagenumlist.length){
+ CodingNumberListLengthened.extend(wordlistcd2);//lengthens list of codeword numbers
+
+}
+while (CodingNumberListLengthened.length > messagenumlist.length){//shortens if too long
+    CodingNumberListLengthened.pop(-1);
+}
+   var finalwordlist = [];
+for(var i = 0; i < messagenumlist.length; i++){//adds the two lists this is where the encryption happens
+
+finalwordlist.push(messagenumlist[i] + CodingNumberListLengthened[i]);
+}
+
+//python var finalwordlist = [sum(i) for i in zip(messagenumlist, CodingNumberListLengthened)//adds the two list
+var counter2 = 0;
+while (counter2 < finalwordlist.length){// no numbers/letters over 26
+if (messagenumlist[counter2] > 26){
+     messagenumlist[counter2] = messagenumlist[counter2] - 26;
+ counter2 += 1;
+}
+
+//var countteerr = 0;
+
+
+var placeholder = finalwordlist[i];// + 96;
+ finalwordlist[i] = String.fromCharCode(placeholder);
+ //countteerr += 1
+}
+// NEED TO BE REPLACED WITH HTML
+console.log("this is your coded word:");
+console.log("".join(finalwordlist));
+};
+
+</script>
+  </body>
+ 
+</html>
