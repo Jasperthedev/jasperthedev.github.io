@@ -28,9 +28,9 @@ var code = function(){
     var x = 0;
     var messagenumlist = []; // coresponding numbers of the message
     while(x < uncodedlist.length){
-        var placehold = 9;
+        
         // makes words into numbers ERROR MESSAGES
-        messagenumlist.push(placehold.charCodeAt(uncodedlist[x]));
+        messagenumlist.push(uncodedlist.charCodeAt(uncodedlist[x]));
         x += 1;
  }
 
