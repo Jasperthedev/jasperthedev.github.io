@@ -30,7 +30,7 @@ var code = function(){
     while(x < uncodedlist.length){
         
         // makes words into numbers ERROR MESSAGES
-        messagenumlist.push(uncodedlist.charCodeAt(uncodedlist[x]));
+        messagenumlist.push(uncodedlist.charCodeAt(x));
         x += 1;
  }
 
@@ -65,9 +65,9 @@ if (messagenumlist[counter2] > 26){
 
 //var countteerr = 0;
 
-
+for(i = 0; i < finalwordlist; i++){
 var placeholder = finalwordlist[i];// + 96;
- finalwordlist[i] = String.fromCharCode(placeholder);
+ finalwordlist[i] = placeholder.fromCharCode(i);
  //countteerr += 1
 }
 // NEED TO BE REPLACED WITH HTML
