@@ -19,9 +19,7 @@ function code() {
     var coderword = document.getElementById("coder word").value;
 
 //first lists
-    var uncodedlist = uncoded.split('');// unencrypted word list
-    var wordlistcd = coderword.split(''); //list of coding numbers
-
+    
 // corresponding number converters
 // message
 
@@ -55,7 +53,7 @@ for(var i = 0; i < messagenumlist.length; i++){//adds the two lists this is wher
 finalwordlist.push(messagenumlist[i] + CodingNumberListLengthened[i]);
 }
 
-//python var finalwordlist = [sum(i) for i in zip(messagenumlist, CodingNumberListLengthened)//adds the two list
+
 var counter2 = 0;
 while (counter2 < finalwordlist.length){// no numbers/letters over 26
 if (messagenumlist[counter2] > 26){
