@@ -27,23 +27,23 @@ function code() {
 
     var x = 0;
     var messagenumlist = []; // coresponding numbers of the message
-    while(x < uncodedlist.length){
+    while(x < uncoded.length){
         
         // makes words into numbers ERROR MESSAGES
-        messagenumlist.push(uncodedlist.charCodeAt(x));
+        messagenumlist.push(uncoded.charCodeAt(x));
         x += 1;
  }
 
 //coding word to numbers 
-var xcd = 0;
+x = 0;
 var wordlistcd2 = []; //coresponding numbers
-while (xcd < wordlistcd.length){
-wordlistcd2.push.charCodeAt(wordlistcd[xcd]);// makes words into numbers
-    xcd += 1;
+while (x < coderword.length){
+wordlistcd2.push(coderword.charCodeAt(x));// makes words into numbers
+    x += 1;
 }
 var CodingNumberListLengthened = []; //code number list lengthed
 while (CodingNumberListLengthened.length < messagenumlist.length){
- CodingNumberListLengthened.extend(wordlistcd2);//lengthens list of codeword numbers
+ CodingNumberListLengthened.push(wordlistcd2);//lengthens list of codeword numbers
 
 }
 while (CodingNumberListLengthened.length > messagenumlist.length){//shortens if too long
@@ -66,13 +66,13 @@ if (messagenumlist[counter2] > 26){
 //var countteerr = 0;
 
 for(i = 0; i < finalwordlist; i++){
-var placeholder = finalwordlist[i];// + 96;
- finalwordlist[i] = placeholder.fromCharCode(i);
+var placeholder = [];// + 96;
+ placeholder.push(finalwordlist.fromCharCode(i));
  //countteerr += 1
 }
 // NEED TO BE REPLACED WITH HTML
 console.log("this is your coded word:");
-console.log("".join(finalwordlist));
+console.log(finalwordlist);
 }
 }
 </script>
